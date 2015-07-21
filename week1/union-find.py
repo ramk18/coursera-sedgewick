@@ -1,13 +1,10 @@
 class quickFind(object):
-
 	def __init__(self):
 		self.data = []
 		for x in range(10):
 			self.data.append(x)
-	
 	def find(self,p,q):
 		return  self.data[p] == self.data[q]
-		
 	def union(self,p,q):
 		p = self.data[p]
 		q = self.data[q]
@@ -19,26 +16,18 @@ class quickFind(object):
 class quickUnion(object):
 	def __init__(self):
 		self.data = []
-		
 		for x in range(10):
 			self.data.append(x)
-
-
 	def root(self,p):
 		while p != self.data[p]:
 			p = self.data[p]
-		return p 
-
+		return p
 	def find(self,p,q):
 		return self.root(p) == self.root(q)
-		
-		
 	def union(self,p,q):
 		p = self.root(p)
 		q = self.root(q)
 		self.data[p] = q
-
-
 
 
 class weightedQuickUnion(object):
@@ -52,12 +41,12 @@ class weightedQuickUnion(object):
 	def root(self,p):
 		while p != self.data[p]:
 			p = self.data[p]
-		return p 
+		return p
 
 	def find(self,p,q):
 		return self.root(p) == self.root(q)
-		
-		
+
+
 	def union(self,p,q):
 		p = self.root(p)
 		q = self.root(q)
@@ -83,12 +72,12 @@ class weightedQuickUnionPathCompression(object):
 		while p != self.data[p]:
 			self.data[p] = self.data[self.data[p]]
 			p = self.data[p]
-		return p 
+		return p
 
 	def find(self,p,q):
 		return self.root(p) == self.root(q)
-		
-		
+
+
 	def union(self,p,q):
 		p = self.root(p)
 		q = self.root(q)
@@ -113,20 +102,8 @@ d.union(4,3)
 d.union(3,8)
 
 
-		
+
 
 e = weightedQuickUnion()
 e.union(4,3)
 e.union(3,8)
-
-
-
-
-
-	
-
-
-		
-
-
-		
